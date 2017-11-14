@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{# Load the tag library #}
+{% load bootstrap3 %}
+
+{# Load CSS and JavaScript #}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+
+{# Display django.contrib.messages as Bootstrap alerts #}
+{% bootstrap_messages %}
+{% block title %}
+{% endblock %}
+{% block content %}
+{% if is_active %}
+Started!
+{% else %}
+Not started yet
+{% endif %}
+{% endblock %}
