@@ -12,13 +12,27 @@
 {% block title %}
 {% endblock %}
 {% block content %}
+<div>
+{% if is_active %}
+    Started!
+{% else %}
+    Not started yet
+{% endif %}
+
+</div>
 <form method="post" class="form">
   {% csrf_token %}
-  {% bootstrap_form form %}
   {% buttons %}
-    <button type="submit" class="btn btn-primary">
-      {% bootstrap_icon "star" %} Submit
+    {% if is_active %}
+    <button type="submit" name="mode" value="sent" class="btn btn-primary">
+      Sent
     </button>
+    {% else %} 
+    <button type="submit" name="mode" value="leave" class="btn btn-primary">
+      Leave ADM
+    </button>
+
+    {% endif %}
   {% endbuttons %}
 </form>
 {% endblock %}

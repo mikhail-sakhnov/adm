@@ -11,3 +11,7 @@ class AdmUserForm(ModelForm):
 
 class SubmitForm(Form):
     token = CharField(label='Token', max_length=100)
+
+
+class ControlForm(Form):
+    mode = CharField(label="mode", max_length=100)
